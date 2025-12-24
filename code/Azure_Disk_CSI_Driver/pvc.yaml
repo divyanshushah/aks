@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce   # Azure Disk supports RWO only
+  storageClassName: azure-disk-sc
+  resources:
+    requests:
+      storage: 5Gi

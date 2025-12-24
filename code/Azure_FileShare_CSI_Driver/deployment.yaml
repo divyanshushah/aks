@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-files
+spec:
+  replicas: 2   # RWX → multiple pods allowed
+  selector:
+    matchLabels:
+      app: nginx-files
+  template:
+    metadata:
+      labels:
+        app: nginx-files
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-storage
+              mountPath: /mnt/azure
+      volumes:
+        - name: nginx-storage
+          persistentVolumeClaim:
+            claimName: nginx-files-pvc

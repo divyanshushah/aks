@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-files-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azure-files-sc
+  resources:
+    requests:
+      storage: 5Gi
