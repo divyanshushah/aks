@@ -1,6 +1,6 @@
 # Integrate Azure Key Vault with Azure Kubernetes Service using CSI Driver with Workload Identity
 
-### Create AKS Cluster with Azure keayvault secrets provider` addon
+### Create AKS Cluster with Azure Keyvault secrets provider addon
 ```bash
 RG=aks-rg
 LOC=eastus2
